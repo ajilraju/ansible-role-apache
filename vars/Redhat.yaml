@@ -1,0 +1,5 @@
+apache_service: httpd
+apache_packages:
+  - httpd
+apache_package_state: present
+apache_config_dest: /etc/httpd/conf/httpd. conf

@@ -1,0 +1,6 @@
+---
+apache_service: apache2
+apache_packages:
+  - apache2
+apache_package_state: present
+apache_config_dest: /etc/apache2/sites-enabled/000-default.conf

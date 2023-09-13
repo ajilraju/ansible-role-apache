@@ -1,0 +1,4 @@
+- name: "Installing httpd webserver"
+  ansible.builtin.yum:
+    name: "{{ apache_packages }}"
+    state: "{{ apache_package_state }}"

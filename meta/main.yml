@@ -1,0 +1,12 @@
+galaxy_info:
+  role_name: apache
+  author: Ajil Raju
+  description: Sample Ansible apache role
+  company: Nothing
+
+  license: CC-BY-4.0
+  min_ansible_version: "2.1"
+
+  galaxy_tags: []
+
+dependencies: []

@@ -1,0 +1,26 @@
+---
+# Include variables and define needed variables.
+- name: Include OS-specific variables.
+  ansible.builtin.include_vars: "{{ ansible_os_family }}.yaml"
+
+# Setup tasks.
+- name: Setup apache
+  ansible.builtin.include_tasks: "setup-{{ ansible_os_family }}.yaml"
+
+# Configure Apache
+- name: Configure Apache.
+  ansible.builtin.include_tasks: "configure-{{ ansible_os_family }}.yaml"
+
+# Enable rewrite module
+- name: Enable the Apache2 module rewrite
+  community.general.apache2_module:
+    state: present
+    name: rewrite
+  notify: Restart apache
+
+# Deploying webpage
+- name: Copy index.html file
+  ansible.builtin.copy:
+    src: index.html
+    dest: "{{ web_dest }}/index.html"
+    mode: "0664"

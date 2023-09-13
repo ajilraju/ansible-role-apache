@@ -1,0 +1,5 @@
+- name: "Installing apache2 webserver"
+  ansible.builtin.apt:
+    name: "{{ apache_packages }}"
+    state: "{{ apache_package_state }}"
+    update_cache: true

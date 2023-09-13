@@ -1,0 +1,6 @@
+- name: Copy apache2 configuration file
+  ansible.builtin.template:
+    src: httpd.conf.j2
+    dest: "{{ apache_config_dest }}"
+    mode: "0644"
+  notify: Restart apache
